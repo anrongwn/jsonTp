@@ -1,0 +1,8 @@
+/Debug
+/Debug/*
+/Release
+/Release/*
+/jsonTp/Debug
+/jsonTp/Debug/*
+/jsonTp/Release
+/jsonTp/Release/*
