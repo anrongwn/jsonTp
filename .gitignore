@@ -1,8 +1,12 @@
+/.vs
 /Debug
 /Debug/*
+/x64
 /Release
 /Release/*
 /jsonTp/Debug
 /jsonTp/Debug/*
 /jsonTp/Release
 /jsonTp/Release/*
+/jsonTp/x64
+/jsonTp/*.vcxproj

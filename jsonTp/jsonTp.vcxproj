@@ -72,8 +72,8 @@
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <LinkIncremental>true</LinkIncremental>
-    <IncludePath>D:\myProgramming\C\myStudy\jsonTp\LuaJIT-2.1.0-beta3\x86\include;$(IncludePath)</IncludePath>
-    <LibraryPath>D:\myProgramming\C\myStudy\jsonTp\LuaJIT-2.1.0-beta3\x86\bin;$(LibraryPath)</LibraryPath>
+    <IncludePath>D:\myStudy\jsonTp\LuaJIT-2.1.0-beta3\x86\include;$(IncludePath)</IncludePath>
+    <LibraryPath>D:\myStudy\jsonTp\LuaJIT-2.1.0-beta3\x86\bin;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <LinkIncremental>true</LinkIncremental>
