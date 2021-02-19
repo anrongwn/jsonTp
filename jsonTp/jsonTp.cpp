@@ -6,6 +6,9 @@
 #include "CJsonObject.hpp"
 #include "anLuaEngineer.h"
 
+#include <optional>
+#include <string>
+
 static const char * DB_NAME = R"(D:\myProgramming\C\jsSysdig\2020-10-28-test\Rawu2DhZNO5W-7751-1-Backup3.db)";
 
 
@@ -38,8 +41,38 @@ const char * lua_path = R"(d:\myProgramming\C\myStudy\jsonTp\Debug\)";
 #else
 const char * lua_path = R"(d:\myProgramming\C\myStudy\jsonTp\Release\)";
 #endif
-int main()
+
+// operator |
+template <typename T, class F>
+auto operator | (T &&param, const F &f)->decltype(f(std::forward<T>(param))) {
+	return f(std::forward<T>(param));
+}
+
+int main(int argc, char* argv)
 {
+	int a = 10;
+	const int b = 20;
+	const int * pa = &a;
+
+	*(int*)pa = 11;
+	pa = &b;
+	*(int*)pa = 21;
+
+	std::optional<std::string> opt1(std::in_place, "c++17 I");
+	std::cout << "opt1 = " << *opt1 << std::endl;
+	//std::string ss = opt1.value();
+
+	std::optional<std::string> opt2("c++17 II");
+	std::cout << "opt2 = " << opt2.value() << std::endl;
+
+	std::optional<std::string> opt3({"c++17 III"});
+	std::cout << "opt3 = " << opt3.value() << std::endl;
+
+	//
+	auto add_one = [](auto a) {return 1 + a; };
+	auto result = 2 | add_one;
+	std::cout << "result = " << result << std::endl;
+
 	int rc = g_anlua.init();
 
     std::cout << "anrong jsonTp init lua env " << rc << std::endl;
